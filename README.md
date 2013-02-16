@@ -5,9 +5,11 @@ A single site browser (SSB) Mac app for TurnTable.fm, built with node-webkit.  T
 ![image](https://api.monosnap.com/image/download?id=oVQov1YySYLmIV5JLnGaGeT81)
 
 ## Installation
-Unzip the file in ````/dist```` and run ````TurnTable.fm.app````.  Currently Facebook login is broken due to FB's security measures. Looking into it.
+Clone or download the repo and run ````TurnTable.fm.app````.  Alternatively, download the zip file in the downloads section.  
 
 This app is running an embedded Chromium browser with node.js bindings.  Check out [node-webkit](https://github.com/rogerwang/node-webkit) for more info.
+
+Currently Facebook login is broken due to FB's security measures. Looking into it.
 
 ### License
 
