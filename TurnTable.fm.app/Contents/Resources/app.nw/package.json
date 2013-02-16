@@ -1,0 +1,24 @@
+{
+	"name": "TurnTable.fm",
+	"description": "The un-official TurnTable.fm Mac app. By a hacker.",
+	"version": "0.0.1",
+	"window":{
+		"width": 1152,
+		"height": 750,
+		"show": false,
+		"toolbar": false,
+		"position": "center",
+		"icon": "app.png",
+		"title": "TurnTable.fm 0.1"
+	},
+	"main": "index.html",
+	"single-instance": true,
+	"maintainers":[ {
+		"name": "Terry Martin",
+		"email": "terryzmartin@gmail.com",
+		"web": "http://www.tzmartin.com"
+	} ],
+	"dependencies":	{
+		"request": "2.12.0"
+	}
+}

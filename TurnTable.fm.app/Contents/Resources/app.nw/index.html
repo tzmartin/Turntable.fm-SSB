@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>TurnTable.fm</title>
+		<style type="text/css">
+			html, body, iframe{
+				width:100%; height: 100%;
+				overflow: hidden; overflow-y: hidden; overflow-x: hidden;
+				margin: 0px; padding:0px;
+				border: none; background-color: #222;
+				font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+			}
+			a {color:white}
+			body {
+				width:100%;	height: 100%;
+				margin: 0px; padding:0px; border: none;
+				background-image: url('apple-startup-ipad-landscape.png');
+				background-position: center center;
+				background-repeat:no-repeat;
+				color: #fff; font-size: 36px; font-weight:normal;
+			}
+			div {background-repeat:no-repeat;background-position: top center;margin:auto;}
+			div .logo {
+			  margin-top:150px;
+			  background-image: url('logo.png');
+			  width:364px;	height:133px;
+			  display:none;
+			}
+			div .container {
+			}
+			div .gorilla {
+			  margin-top:600px;
+			  background-image: url('gorilla.png');
+			  width:374px;	height:315px;
+			  left:385px;
+			  position:absolute;
+			  top: 20px;
+			}
+			div .stage {
+			  position:absolute;
+			  left: 40px;
+			  bottom: 25px;
+			  margin:auto;
+			  background-image: url('stage.png');
+			  width:1072px;	height:142px;
+			  z-index:0;
+			}
+			div .loading {
+			  top: 65px;
+			  margin:auto;
+			  background-image: url('loading.png');
+			  width:312px;	height:83px;
+			  z-index:30;
+			  position:relative;
+			  opacity:0;
+			}
+      
+			footer{
+				background-color: rgb(28,28,28);
+				border-top:1px solid #282828;
+				width: 100%; height:24px;
+				line-height: 24px; font-size: 11px; letter-spacing: 1px;
+				color: #eee; text-indent: 20px;
+				position: absolute; bottom: 0px;
+			}
+			footer span{ display: block; float:left; width: 90%; }
+			footer span:last-child{ width: 10%; text-align: left; }
+		</style>
+	</head>
+	<body>
+	  <div id="page">
+	    <div class="logo"></div>
+	    <div class="container">
+	      <div class="gorilla"></div>
+	    </div>
+	    <div class="stage">
+	      <div class="loading"></div>
+	    </div>
+	  </div>
+		<footer>
+			<span>TurnTable.fm SSB Version 0.0.1 | by <a href="http://twitter.com/tzmartin" target="_blank">@tzmartin</a></span>
+			<span></span>
+		</footer>
+		<script src="jquery-1.8.3.min.js"></script>
+		<script src="jquery.easing-1.3.min.js"></script>
+    <script src="jquery.bounce.js"></script>
+		<script>
+			$(document).ready(function(){
+				try{
+				  var gui = require('nw.gui');
+					gui.Window.get().show();
+				  
+				  $('.logo').fadeIn(2000, function(){
+					  $('.gorilla').animate({top:100,duration: 2000, specialEasing: { width: 'linear', height: 'easeOutBounce'}},function() {
+              $('.gorilla').bounce();
+              (function loop() {
+                $('.loading').animate({opacity: 1});
+                setTimeout(function () {
+                  $('.loading').animate({opacity: 0.2});
+                  setTimeout(loop, 500);
+                }, 500);
+              }());
+            });
+					});
+					
+					setTimeout(function(){
+  					window.location="http://turntable.fm"
+				  },7000);					
+					
+				}catch(e){alert(e);}
+			});
+		</script>
+	</body>
+</html>
